@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/user/Dropbox/People_Store_Front/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string-array name="tradelist">
+        <item>Pheriperals</item>
+        <item>Tv Boards</item>
+        <item>Amplifiers</item>
+        <item>Speakers</item>
+        <item>DVD Players</item>
+
+    </string-array>
+    <string name="Collector">District Collector</string>
+    <string name="Distributor">Distributor</string>
+    <string name="ID">Card Number : </string>
+    <string name="Measure">Measuring</string>
+    <string name="Ration_Holder">Ration Card Holder</string>
+    <string name="Rice">Rice</string>
+    <string name="Time">Time Maintaining</string>
+    <string name="Wheat">Wheat</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_name">People Store Front</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string name="branch">Branch Name:  </string>
+    <string name="cal">Stock details in Calendar View</string>
+    <string name="caption">People Store Front</string>
+    <string name="dFeedback">Distributor Feedback</string>
+    <string name="dTitle">Distributor Entry Form</string>
+    <string name="df">Distributor Feedback</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="members">No. of Members : </string>
+    <string name="month">Month</string>
+    <string name="name">Name : </string>
+    <string name="other">Others</string>
+    <string name="post_comment">Post Comment</string>
+    <string name="read_comments_title">Recent Comments</string>
+    <string name="response">Response</string>
+    <string name="sDetail"><u>Stock Details</u></string>
+    <string name="sex">Sex : </string>
+    <string name="store">Save</string>
+    <string name="sub">Submit</string>
+    <string name="sugar">Sugar</string>
+    <!-- From: file:/C:/Users/user/Dropbox/People_Store_Front/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="BlackText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#ffffff</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+    <style name="WhiteText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+</resources>

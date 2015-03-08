@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/caption">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/branch"
+            android:id="@+id/branch"
+            android:gravity="center"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/caption"
+        android:layout_marginTop="10dp"
+        android:id="@+id/personalDetails"
+        android:background="@drawable/borders">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cardID"
+            android:text="@string/ID"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="7dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cardName"
+            android:text="@string/name"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="7dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cardSex"
+            android:text="@string/sex"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="7dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cardMembers"
+            android:text="@string/members"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="7dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/caption"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/personalDetails"
+        android:background="@drawable/borders"
+        android:id="@+id/StockDetails">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dFeedback"
+            android:text="@string/dFeedback"
+            android:layout_marginTop="5dp"
+            android:textStyle="italic"
+            android:layout_gravity="center"/>
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Time"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkBox1"
+            android:text="@string/response"
+            android:textSize="15sp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkBox2"
+            android:text="@string/Measure"
+            android:textSize="15sp"/>
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkBox3"
+            android:text="@string/other"
+            android:textSize="15sp" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/personalDetails"
+        android:id="@+id/txt"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/Calendar"
+            android:text="@string/cal"
+            android:textStyle="italic"
+            android:layout_marginLeft="60dp"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txt"
+        android:background="@drawable/border"
+        android:layout_toLeftOf="@+id/StockDetails"
+        android:id="@+id/tableOne">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/jan"
+            android:background="@android:color/transparent"
+            android:id="@+id/jan"
+            android:layout_marginTop="10dp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/feb"
+            android:background="@android:color/transparent"
+            android:id="@+id/feb"
+            android:layout_marginTop="5dp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mar"
+            android:background="@android:color/transparent"
+            android:id="@+id/mar"
+            android:layout_marginTop="5dp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/apr"
+            android:id="@+id/apr"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="5dp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/may"
+            android:background="@android:color/transparent"
+            android:id="@+id/may"
+            android:layout_marginTop="5dp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/jun"
+            android:background="@android:color/transparent"
+            android:id="@+id/jun"
+            android:layout_marginTop="5dp" />
+        </TableLayout>
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/txt"
+        android:background="@drawable/border"
+        android:id="@+id/tableTwo"
+        android:layout_toRightOf="@+id/tableOne">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/jul"
+            android:background="@android:color/transparent"
+            android:id="@+id/jul"
+            android:layout_marginTop="10dp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/aug"
+            android:background="@android:color/transparent"
+            android:id="@+id/aug"
+            android:layout_marginTop="5dp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sep"
+            android:background="@android:color/transparent"
+            android:id="@+id/sep"
+            android:layout_marginTop="5dp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/oct"
+            android:background="@android:color/transparent"
+            android:id="@+id/oct"
+            android:layout_marginTop="5dp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/nov"
+            android:background="@android:color/transparent"
+            android:id="@+id/nov"
+            android:layout_marginTop="5dp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dec"
+            android:background="@android:color/transparent"
+            android:id="@+id/dec"
+            android:layout_marginTop="5dp" />
+    </TableLayout>
+
+
+</RelativeLayout><!-- From: file:/C:/Users/user/Dropbox/People_Store_Front/app/src/main/res/layout/cardholderinfo.xml -->

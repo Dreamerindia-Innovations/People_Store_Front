@@ -1,0 +1,144 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/caption"
+            android:text="@string/caption"
+            android:textStyle="italic"
+            android:textSize="23sp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:textColor="#c2a"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:id="@+id/linearLayout2"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="66dp"
+            android:layout_below="@+id/caption">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Ration ID"
+                android:id="@+id/username1"
+                android:layout_marginLeft="30dp"
+                android:gravity="center"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Password"
+                android:id="@+id/password1"
+                android:layout_marginLeft="30dp"
+                android:gravity="center"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:id="@+id/linearLayout3"
+            android:layout_above="@+id/signin"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/radioLoginGroup"
+            android:layout_alignTop="@+id/linearLayout2">
+
+
+            <EditText
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/Username"
+                android:layout_gravity="left|center"
+                android:gravity="center"
+                android:layout_marginLeft="18dp" />
+
+            <EditText
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textpassword"
+                android:inputType="textPassword"
+                android:layout_gravity="left|center"
+                android:gravity="center"
+                android:layout_marginLeft="18dp" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:id="@+id/signin"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_toLeftOf="@+id/register"
+            android:layout_marginTop="20dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:id="@+id/register"
+            android:layout_below="@+id/linearLayout3"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp" />
+
+        <RadioGroup
+            android:id="@+id/radioLoginGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="39dp"
+            android:layout_below="@+id/signin"
+            android:layout_alignParentLeft="true">
+
+            <RadioButton
+                android:id="@+id/ration_cardHolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Ration_Holder"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/distributor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Distributor"
+                android:checked="false" />
+            <RadioButton
+                android:id="@+id/Collector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Collector"/>
+
+        </RadioGroup>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#111" />
+</android.support.v4.widget.DrawerLayout>
+<!-- From: file:/C:/Users/user/Dropbox/People_Store_Front/app/src/main/res/layout/activity_main.xml -->

@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">People Store Front</string>
+    <string-array name="tradelist">
+        <item>Pheriperals</item>
+        <item>Tv Boards</item>
+        <item>Amplifiers</item>
+        <item>Speakers</item>
+        <item>DVD Players</item>
+
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string name="read_comments_title">Recent Comments</string>
+    <string name="post_comment">Post Comment</string>
+    <string name="caption">People Store Front</string>
+    <string name="Ration_Holder">Ration Card Holder</string>
+    <string name="Distributor">Distributor</string>
+    <string name="Collector">District Collector</string>
+    <string name="branch">Branch Name:  </string>
+    <string name="name">Name : </string>
+    <string name="ID">Card Number : </string>
+    <string name="sex">Sex : </string>
+    <string name="members">No. of Members : </string>
+    <string name="dFeedback">Distributor Feedback</string>
+    <string name="cal">Stock details in Calendar View</string>
+    <string name="Time">Time Maintaining</string>
+    <string name="response">Response</string>
+    <string name="Measure">Measuring</string>
+    <string name="other">Others</string>
+    <string name="dTitle">Distributor Entry Form</string>
+    <string name="sugar">Sugar</string>
+    <string name="Wheat">Wheat</string>
+    <string name="Rice">Rice</string>
+    <string name="sDetail"><u>Stock Details</u></string>
+    <string name="df">Distributor Feedback</string>
+    <string name="month">Month</string>
+    <string name="store">Save</string>
+    <string name="sub">Submit</string>
+</resources>
