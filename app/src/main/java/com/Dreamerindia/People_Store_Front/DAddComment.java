@@ -1,13 +1,5 @@
 package com.Dreamerindia.People_Store_Front;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -22,13 +14,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AddComment extends Activity implements OnClickListener{
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DAddComment extends Activity implements OnClickListener {
 
     private EditText title, message;
-    private Button  mSubmit;
-    String time,response,measure;
+    private Button mSubmit;
+    private ProgressDialog pDialog;
     String post_username;
-  private ProgressDialog pDialog;
     JSONParser jsonParser = new JSONParser();
     private static final String POST_COMMENT_URL = "http://www.EmbeddedCollege.org/psfwebservices/addcomment.php";
     private static final String TAG_SUCCESS = "success";
@@ -40,17 +39,16 @@ public class AddComment extends Activity implements OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_comment);
 
-        title = (EditText)findViewById(R.id.title);
-        message = (EditText)findViewById(R.id.message);
+        title = (EditText) findViewById(R.id.title);
+        message = (EditText) findViewById(R.id.message);
 
-        mSubmit = (Button)findViewById(R.id.submit);
+        mSubmit = (Button) findViewById(R.id.submit);
         mSubmit.setOnClickListener(this);
         Intent intent = getIntent();
-        time = intent.getExtras().getString("time");
-        response = intent.getExtras().getString("response");
-        measure = intent.getExtras().getString("measure");
-//        Toast.makeText(getApplicationContext(), time+response+measure+other, Toast.LENGTH_SHORT).show();
-
+        String stitle = intent.getExtras().getString("title");
+        String smessage = intent.getExtras().getString("msg");
+        title.setText(stitle);
+        message.setText(smessage);
     }
 
     @Override
@@ -63,7 +61,7 @@ public class AddComment extends Activity implements OnClickListener{
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(AddComment.this);
+            pDialog = new ProgressDialog(DAddComment.this);
             pDialog.setMessage("Posting Comment...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
@@ -79,21 +77,19 @@ public class AddComment extends Activity implements OnClickListener{
             String post_title = title.getText().toString();
             String post_message = message.getText().toString();
 
-
             //We need to change this:
-            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(AddComment.this);
+            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(DAddComment.this);
             post_username = sp.getString("username", "anon");
 
             try {
                 // Building Parameters
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-
                 params.add(new BasicNameValuePair("username", post_username));
                 params.add(new BasicNameValuePair("title", post_title));
                 params.add(new BasicNameValuePair("message", post_message));
-                params.add(new BasicNameValuePair("time", time));
-                params.add(new BasicNameValuePair("response", response));
-                params.add(new BasicNameValuePair("measure", measure));
+                params.add(new BasicNameValuePair("time", ""));
+                params.add(new BasicNameValuePair("response", ""));
+                params.add(new BasicNameValuePair("measure", ""));
                 Log.d("request!", "starting");
 
                 //Posting user data to script
@@ -109,29 +105,23 @@ public class AddComment extends Activity implements OnClickListener{
                     Log.d("Comment Added!", json.toString());
                     finish();
                     return json.getString(TAG_MESSAGE);
-                }else{
+                } else {
                     Log.d("Comment Failure!", json.getString(TAG_MESSAGE));
                     return json.getString(TAG_MESSAGE);
-
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
             return null;
-
         }
 
         protected void onPostExecute(String file_url) {
             // dismiss the dialog once product deleted
             pDialog.dismiss();
-            if (file_url != null){
-                Toast.makeText(AddComment.this, "Feedback from "+post_username +" posted successfully!", Toast.LENGTH_LONG).show();
+
+            if (file_url != null) {
+                Toast.makeText(DAddComment.this, "Feedback from " + post_username + " posted successfully!", Toast.LENGTH_LONG).show();
             }
-
         }
-
     }
-
-
 }

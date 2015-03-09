@@ -82,7 +82,7 @@ public class JSONParser {
         try {
             jObj = new JSONObject(json);
         } catch (JSONException e) {
-            Log.e("JSON Parser", "Error parsing data " + e.toString());
+            Log.e("JSON Parser get", "Error parsing data " + e.toString());
         }
 
         // Return the JSON Object.
@@ -148,7 +148,7 @@ public class JSONParser {
         try {
             jObj = new JSONObject(json);
         } catch (JSONException e) {
-            Log.e("JSON Parser", "Error parsing data " + e.toString());
+            Log.e("JSON Parser post", "Error parsing data " + e.toString());
         }
 
         // return JSON String

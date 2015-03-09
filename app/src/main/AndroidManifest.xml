@@ -48,6 +48,9 @@
         <activity
             android:name="com.Dreamerindia.People_Store_Front.AddComment"
             android:label="@string/app_name" />
+        <activity
+            android:name="com.Dreamerindia.People_Store_Front.DAddComment"
+            android:label="@string/app_name" />
     </application>
 
 </manifest>

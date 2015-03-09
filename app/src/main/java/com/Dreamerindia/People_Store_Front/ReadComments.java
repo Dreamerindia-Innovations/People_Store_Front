@@ -26,6 +26,9 @@ public class ReadComments extends ListActivity {
     private static final String TAG_POST_ID = "post_id";
     private static final String TAG_USERNAME = "username";
     private static final String TAG_MESSAGE = "message";
+    private static final String TAG_TIME = "time";
+    private static final String TAG_RESPONSE = "response";
+    private static final String TAG_MEASURE = "measure";
     // it's important to note that the message is both in the parent branch of
     // our JSON tree that displays a "Post Available" or a "No Post Available"
     // message,
@@ -51,11 +54,6 @@ public class ReadComments extends ListActivity {
         super.onResume();
         // loading the comments via AsyncTask
         new LoadComments().execute();
-    }
-
-    public void addComment(View v) {
-        Intent i = new Intent(ReadComments.this, AddComment.class);
-        startActivity(i);
     }
 
     /**
@@ -94,6 +92,9 @@ public class ReadComments extends ListActivity {
                 String title = c.getString(TAG_TITLE);
                 String content = c.getString(TAG_MESSAGE);
                 String username = c.getString(TAG_USERNAME);
+                String time = c.getString(TAG_TIME);
+                String response = c.getString(TAG_RESPONSE);
+                String measure = c.getString(TAG_MEASURE);
 
                 // creating new HashMap
                 HashMap<String, String> map = new HashMap<String, String>();
@@ -101,6 +102,9 @@ public class ReadComments extends ListActivity {
                 map.put(TAG_TITLE, title);
                 map.put(TAG_MESSAGE, content);
                 map.put(TAG_USERNAME, username);
+                map.put(TAG_TIME, time);
+                map.put(TAG_RESPONSE, response);
+                map.put(TAG_MEASURE, measure);
 
                 // adding HashList to ArrayList
                 mCommentList.add(map);
@@ -128,7 +132,7 @@ public class ReadComments extends ListActivity {
                 R.layout.single_post, new String[] { TAG_TITLE, TAG_MESSAGE,
                 TAG_USERNAME }, new int[] { R.id.title, R.id.message,
                 R.id.username });
-
+//+TAG_TIME+", "+TAG_RESPONSE+", "+TAG_MEASURE+". "
         // I shouldn't have to comment on this one:
         setListAdapter(adapter);
 

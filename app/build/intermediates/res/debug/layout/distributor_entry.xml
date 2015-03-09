@@ -19,7 +19,7 @@
             android:gravity="center"
             android:textSize="19sp"
             android:textStyle="bold"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="10dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             android:gravity="center"
             android:textSize="19sp"
             android:textStyle="bold"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="5dp" />
     </LinearLayout>
 
     <TableLayout
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="250dp"
         android:layout_below="@+id/caption"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/CHDetails"
         android:background="@drawable/borders">
 
@@ -158,8 +158,16 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/pull"
+                android:text="@string/pull" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/store"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:id="@+id/store" />
         </TableRow>
     </TableLayout>
 
@@ -169,7 +177,7 @@
         android:layout_width="200dp"
         android:layout_height="250dp"
         android:layout_below="@id/caption"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/CHDetails"
         android:background="@drawable/borders"
         android:id="@+id/StockDetails">
@@ -214,7 +222,7 @@
                 android:id="@+id/bSugar"
                 android:text="@string/sugar"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp" />
+                android:layout_marginTop="10dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -294,6 +302,7 @@
         android:layout_alignParentRight="true"
         android:orientation="vertical"
         android:layout_below="@+id/CHDetails">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -305,17 +314,34 @@
             android:layout_alignTop="@+id/txt"
             android:layout_centerHorizontal="true" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title" />
+
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp" />
+            android:id="@+id/title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Message"/>
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/message" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sub"
+            android:text="Edit &amp; submit"
             android:layout_marginTop="5dp"
             android:layout_below="@+id/tableOne"
-            android:layout_gravity="bottom|right" />
+            android:layout_gravity="bottom|right"
+            android:onClick="dFeedbackSubmit"/>
 
     </LinearLayout>
 

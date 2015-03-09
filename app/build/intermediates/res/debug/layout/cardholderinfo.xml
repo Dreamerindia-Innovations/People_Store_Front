@@ -22,7 +22,7 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="200dp"
+        android:layout_width="170dp"
         android:layout_height="200dp"
         android:layout_below="@+id/caption"
         android:layout_marginTop="10dp"
@@ -84,14 +84,14 @@
             android:layout_gravity="center"/>
 
         <CheckBox
-            android:id="@+id/checkBox1"
+            android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Time"
             android:textSize="15sp" />
 
         <CheckBox
-            android:id="@+id/checkBox2"
+            android:id="@+id/response"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/checkBox1"
@@ -99,24 +99,27 @@
             android:textSize="15sp"/>
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/measure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/checkBox2"
             android:text="@string/Measure"
             android:textSize="15sp"/>
         <CheckBox
-            android:id="@+id/checkBox4"
+            android:id="@+id/other"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/checkBox3"
             android:text="@string/other"
             android:textSize="15sp" />
 
-        <EditText
-            android:layout_width="fill_parent"
+        <Button
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText" />
+            android:id="@+id/chSubmit"
+            android:text="@string/sub"
+            android:layout_gravity="center"
+            android:onClick="storeComment"/>
     </LinearLayout>
 
     <LinearLayout

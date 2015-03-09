@@ -25,9 +25,9 @@
     <string name="members">No. of Members : </string>
     <string name="dFeedback">Distributor Feedback</string>
     <string name="cal">Stock details in Calendar View</string>
-    <string name="Time">Time Maintaining</string>
-    <string name="response">Response</string>
-    <string name="Measure">Measuring</string>
+    <string name="Time">Good Time Maintaining</string>
+    <string name="response">Good Response</string>
+    <string name="Measure">Correct Measuring</string>
     <string name="other">Others</string>
     <string name="dTitle">Distributor Entry Form</string>
     <string name="sugar">Sugar</string>
@@ -36,6 +36,7 @@
     <string name="sDetail"><u>Stock Details</u></string>
     <string name="df">Distributor Feedback</string>
     <string name="month">Month</string>
-    <string name="store">Save</string>
+    <string name="store">Update</string>
     <string name="sub">Submit</string>
+    <string name="pull">Look up</string>
 </resources>

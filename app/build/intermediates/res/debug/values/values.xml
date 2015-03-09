@@ -13,10 +13,10 @@
     <string name="Collector">District Collector</string>
     <string name="Distributor">Distributor</string>
     <string name="ID">Card Number : </string>
-    <string name="Measure">Measuring</string>
+    <string name="Measure">Correct Measuring</string>
     <string name="Ration_Holder">Ration Card Holder</string>
     <string name="Rice">Rice</string>
-    <string name="Time">Time Maintaining</string>
+    <string name="Time">Good Time Maintaining</string>
     <string name="Wheat">Wheat</string>
     <string name="action_websearch">Web search</string>
     <string name="app_name">People Store Front</string>
@@ -34,11 +34,12 @@
     <string name="name">Name : </string>
     <string name="other">Others</string>
     <string name="post_comment">Post Comment</string>
+    <string name="pull">Look up</string>
     <string name="read_comments_title">Recent Comments</string>
-    <string name="response">Response</string>
+    <string name="response">Good Response</string>
     <string name="sDetail"><u>Stock Details</u></string>
     <string name="sex">Sex : </string>
-    <string name="store">Save</string>
+    <string name="store">Update</string>
     <string name="sub">Submit</string>
     <string name="sugar">Sugar</string>
     <!-- From: file:/C:/Users/user/Dropbox/People_Store_Front/app/src/main/res/values/styles.xml -->

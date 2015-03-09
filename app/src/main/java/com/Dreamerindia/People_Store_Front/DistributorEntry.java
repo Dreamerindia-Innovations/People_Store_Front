@@ -2,11 +2,13 @@ package com.Dreamerindia.People_Store_Front;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import org.apache.http.HttpEntity;
@@ -28,7 +30,7 @@ import java.util.List;
  * Created by user on 08-03-2015.
  */
 public class DistributorEntry extends Activity {
-    TextView branchArea, cardID, cardName, cardSex, cardMembers;
+    TextView branchArea, cardID, cardName, cardSex, cardMembers,t,m;
 
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -59,6 +61,18 @@ public class DistributorEntry extends Activity {
         branchArea = (TextView) findViewById(R.id.branch);
         // Loading Profile in Background Thread
         new LoadProfile().execute();
+    }
+    public void dFeedbackSubmit(View v){
+        t = (TextView)findViewById(R.id.title);
+        m = (TextView)findViewById(R.id.message);
+        String tit = t.getText().toString();
+        String mes = m.getText().toString();
+        Intent i = new Intent(this,DAddComment.class);
+        i.putExtra("title",tit);
+        i.putExtra("msg",mes);
+        startActivity(i);
+        t.setText("");
+        m.setText("");
     }
 
     class LoadProfile extends AsyncTask<String, String, String> {

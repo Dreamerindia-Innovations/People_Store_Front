@@ -2,11 +2,14 @@ package com.Dreamerindia.People_Store_Front;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,23 +33,24 @@ import java.util.List;
  */
 public class CardHolderInfo extends Activity {
     TextView branchArea, cardID, cardName, cardSex, cardMembers;
-
-    // Progress Dialog
+    CheckBox time, response, measure;
+    JSONParser jsonParser = new JSONParser();
     private ProgressDialog pDialog;
-
-    // Profile json object
     JSONArray user;
     JSONObject hay;
-    // Profile JSON url
+    private static final String POST_COMMENT_URL = "http://www.EmbeddedCollege.org/psfwebservices/addcomment.php";
+    private static final String TAG_SUCCESS = "success";
+    private static final String TAG_MESSAGE = "message";
     private static final String URL = "http://www.EmbeddedCollege.org/psfwebservices/select.php";
-
-    // ALL JSON node names
     private static final String TAG_PROFILE = "user";
-    // private static final String TAG_ID = "id";
     private static final String TAG_USERNAME = "username";
     private static final String TAG_SUGAR = "sugar";
     private static final String TAG_RICE = "rice";
     private static final String TAG_WHEAT = "wheat";
+    private static final String TAG_NO_MEMBER = "nomember";
+    private static final String TAG_SEX = "sex";
+    private static final String TAG_AREA = "area";
+    private static final String TAG_U_NAME = "uname";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,9 +66,35 @@ public class CardHolderInfo extends Activity {
         new LoadProfile().execute();
     }
 
+    public void storeComment(View v) {
+        time = (CheckBox) findViewById(R.id.time);
+        response = (CheckBox) findViewById(R.id.response);
+        measure = (CheckBox) findViewById(R.id.measure);
+        String S_TIME = null, S_RESPONSE = null, S_MEASURE = null;
+        if (time.isChecked()) {
+            S_TIME = getResources().getString(R.string.Time);
+        }else{
+            S_TIME = "";
+        }
+        if (response.isChecked()) {
+            S_RESPONSE = getResources().getString(R.string.response);
+        }else{
+            S_RESPONSE ="";
+        }
+        if (measure.isChecked()) {
+            S_MEASURE = getResources().getString(R.string.Measure);
+        }else{
+            S_MEASURE ="";
+        }
+        Toast.makeText(getApplicationContext(), "Please enter the detailed Feedback", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(this,AddComment.class);
+        i.putExtra("time",S_TIME);
+        i.putExtra("response",S_RESPONSE);
+        i.putExtra("measure",S_MEASURE);
+        startActivity(i);
+    }
+
     class LoadProfile extends AsyncTask<String, String, String> {
-
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -112,21 +142,21 @@ public class CardHolderInfo extends Activity {
                 hay = new JSONObject(json);
                 JSONArray user = hay.getJSONArray("user");
                 JSONObject jb = user.getJSONObject(0);
-                String userID = jb.getString("user");
-                String uname = jb.getString("uname");
-                String branch = jb.getString("area");
-                String sex = jb.getString("sex");
-                String noMember = jb.getString("nomember");
-                String sugar = jb.getString("sugar");
-                String rice = jb.getString("rice");
-                String wheat = jb.getString("wheat");
+                String userID = jb.getString(TAG_PROFILE);
+                String uname = jb.getString(TAG_U_NAME);
+                String branch = jb.getString(TAG_AREA);
+                String sex = jb.getString(TAG_SEX);
+                String noMember = jb.getString(TAG_NO_MEMBER);
+                String sugar = jb.getString(TAG_SUGAR);
+                String rice = jb.getString(TAG_RICE);
+                String wheat = jb.getString(TAG_WHEAT);
 
                 // displaying all data in textview
-                branchArea.append(" "+branch);
-                cardID.append(" "+userID);
-                cardName.append(" "+uname);
-                cardSex.append(" "+sex);
-                cardMembers.append(" "+noMember);
+                branchArea.append(" " + branch);
+                cardID.append(" " + userID);
+                cardName.append(" " + uname);
+                cardSex.append(" " + sex);
+                cardMembers.append(" " + noMember);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -134,4 +164,5 @@ public class CardHolderInfo extends Activity {
         }
 
     }
+
 }
