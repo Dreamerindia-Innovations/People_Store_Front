@@ -1,7 +1,6 @@
 package com.Dreamerindia.People_Store_Front;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -9,7 +8,10 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -30,81 +32,103 @@ import java.util.List;
  * Created by user on 08-03-2015.
  */
 public class DistributorEntry extends Activity {
-    TextView branchArea, cardID, cardName, cardSex, cardMembers,t,m;
-
-    // Progress Dialog
-    private ProgressDialog pDialog;
-
-    // Profile json object
+    TextView eMonth, eSugar, eWheat, eRice, eCardName, branchArea;
+    EditText cNumber, cSugar, cWheat, cRice, t, m;
     JSONArray user;
     JSONObject hay;
-    // Profile JSON url
-    private static final String URL = "http://www.EmbeddedCollege.org/psfwebservices/select.php";
-
-    // ALL JSON node names
+    JSONParser jsonParser = new JSONParser();
+    private static final String URL = "http://www.EmbeddedCollege.org/psfwebservices/dselect.php";
+    private static final String N_URL = "http://www.EmbeddedCollege.org/psfwebservices/dnamepull.php";
+    private static final String U_URL = "http://www.EmbeddedCollege.org/psfwebservices/dupdate.php";
     private static final String TAG_PROFILE = "user";
-    // private static final String TAG_ID = "id";
     private static final String TAG_USERNAME = "username";
+    private static final String TAG_U_NAME = "uname";
+    private static final String TAG_BRANCH = "area";
+    private static final String TAG_MONTH = "month";
     private static final String TAG_SUGAR = "sugar";
     private static final String TAG_RICE = "rice";
     private static final String TAG_WHEAT = "wheat";
+    private static final String TAG_SUCCESS = "success";
+    private static final String TAG_MESSAGE = "message";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.distributor_entry);
-
-        cardName = (TextView) findViewById(R.id.cardName);
-        cardSex = (TextView) findViewById(R.id.cardSex);
-        cardMembers = (TextView) findViewById(R.id.cardMembers);
-        cardID = (TextView) findViewById(R.id.cardID);
         branchArea = (TextView) findViewById(R.id.branch);
+        eMonth = (TextView) findViewById(R.id.eMonth);
+        eSugar = (TextView) findViewById(R.id.ebSugar);
+        eWheat = (TextView) findViewById(R.id.ebWheat);
+        eRice = (TextView) findViewById(R.id.ebRice);
+
+        cNumber = (EditText) findViewById(R.id.eddcardID);
+        eCardName = (TextView) findViewById(R.id.cardName);
+        cSugar = (EditText) findViewById(R.id.eddcardSugar);
+        cWheat = (EditText) findViewById(R.id.eddcardWheat);
+        cRice = (EditText) findViewById(R.id.eddcardRice);
         // Loading Profile in Background Thread
-        new LoadProfile().execute();
+        new LoadStock().execute();
+        eCardName.requestFocus();
+
     }
-    public void dFeedbackSubmit(View v){
-        t = (TextView)findViewById(R.id.title);
-        m = (TextView)findViewById(R.id.message);
+
+    public void dFeedbackSubmit(View v) {
+        hideSoftKeyboard(v);
+        t = (EditText) findViewById(R.id.title);
+        m = (EditText) findViewById(R.id.message);
         String tit = t.getText().toString();
         String mes = m.getText().toString();
-        Intent i = new Intent(this,DAddComment.class);
-        i.putExtra("title",tit);
-        i.putExtra("msg",mes);
+        Intent i = new Intent(this, DAddComment.class);
+        i.putExtra("title", tit);
+        i.putExtra("msg", mes);
         startActivity(i);
         t.setText("");
         m.setText("");
     }
 
-    class LoadProfile extends AsyncTask<String, String, String> {
+    public void hideSoftKeyboard(View v) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+    }
+
+    public void lookUp(View v) {
+        hideSoftKeyboard(v);
+        eCardName.setText(getResources().getString(R.string.name));
+        new LoadName().execute();
+    }
+
+    public void update(View v) {
+        hideSoftKeyboard(v);
+        String sug = cSugar.getText().toString();
+        String whe = cWheat.getText().toString();
+        String ric = cRice.getText().toString();
+        if(sug.equals("")||whe.equals("")||ric.equals("")){
+            Toast.makeText(getApplicationContext(),"Please fill all the details",Toast.LENGTH_SHORT).show();
+        }else {
+            new UpdateStock().execute();
+        }
+    }
+
+    class LoadStock extends AsyncTask<String, String, String> {
 
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(DistributorEntry.this);
-            pDialog.setMessage("Loading profile ...");
-            pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
-            pDialog.show();
         }
 
-        /**
-         * getting Profile JSON
-         */
         protected String doInBackground(String... args) {
-            // Building Parameters
             String json = null;
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(DistributorEntry.this);
-            String post_username = sp.getString("username", "anon");
+            String post_username = sp.getString(TAG_USERNAME, "anon");
             try {
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("username", post_username));
+                params.add(new BasicNameValuePair(TAG_USERNAME, post_username));
 
                 HttpClient httpclient = new DefaultHttpClient();
                 HttpPost httppost = new HttpPost(URL);
                 httppost.setEntity(new UrlEncodedFormEntity(params));
 
-                // Execute HTTP Post Request
                 HttpResponse response = httpclient.execute(httppost);
                 HttpEntity resEntity = response.getEntity();
                 json = EntityUtils.toString(resEntity);
@@ -120,32 +144,138 @@ public class DistributorEntry extends Activity {
         @Override
         protected void onPostExecute(String json) {
             super.onPostExecute(json);
-            // dismiss the dialog after getting all products
-            pDialog.dismiss();
             try {
                 hay = new JSONObject(json);
-                JSONArray user = hay.getJSONArray("user");
+                JSONArray user = hay.getJSONArray(TAG_PROFILE);
                 JSONObject jb = user.getJSONObject(0);
-                String userID = jb.getString("user");
-                String uname = jb.getString("uname");
-                String branch = jb.getString("area");
-                String sex = jb.getString("sex");
-                String noMember = jb.getString("nomember");
-                String sugar = jb.getString("sugar");
-                String rice = jb.getString("rice");
-                String wheat = jb.getString("wheat");
+                String branch = jb.getString(TAG_BRANCH);
+                String month = jb.getString(TAG_MONTH);
+                String sugar = jb.getString(TAG_SUGAR);
+                String rice = jb.getString(TAG_RICE);
+                String wheat = jb.getString(TAG_WHEAT);
 
                 // displaying all data in textview
-                branchArea.append(branch);
-                cardID.append(userID);
-                cardName.append(uname);
-                cardSex.append(sex);
-                cardMembers.append(noMember);
+                branchArea.append(" " + branch);
+                eMonth.append(month);
+                eSugar.append(sugar);
+                eWheat.append(wheat);
+                eRice.append(rice);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    class LoadName extends AsyncTask<String, String, String> {
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        protected String doInBackground(String... args) {
+            String name = cNumber.getText().toString();
+            String json = null;
+            try {
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+                params.add(new BasicNameValuePair(TAG_USERNAME, name));
+
+                HttpClient httpclient = new DefaultHttpClient();
+                HttpPost httppost = new HttpPost(N_URL);
+                httppost.setEntity(new UrlEncodedFormEntity(params));
+
+                HttpResponse response = httpclient.execute(httppost);
+                HttpEntity resEntity = response.getEntity();
+                json = EntityUtils.toString(resEntity);
+
+                Log.i("Profile JSON: ", json.toString());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return json;
+        }
+
+        @Override
+        protected void onPostExecute(String json) {
+            super.onPostExecute(json);
+            try {
+                hay = new JSONObject(json);
+                JSONArray user = hay.getJSONArray(TAG_PROFILE);
+                JSONObject jb = user.getJSONObject(0);
+                String usern = jb.getString(TAG_U_NAME);
+                eCardName.append(" " + usern);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    class UpdateStock extends AsyncTask<String, String, String> {
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        protected String doInBackground(String... args) {
+            int success;
+            String name = cNumber.getText().toString();
+            String sug = cSugar.getText().toString();
+            String whe = cWheat.getText().toString();
+            String ric = cRice.getText().toString();
+            String esug = eSugar.getText().toString();
+            String ewhe = eWheat.getText().toString();
+            String eric = eRice.getText().toString();
+            int cs = Integer.parseInt(sug);
+            int cw = Integer.parseInt(whe);
+            int cr = Integer.parseInt(ric);
+            int s = Integer.parseInt(esug);
+            int w = Integer.parseInt(ewhe);
+            int r = Integer.parseInt(eric);
+            int sugar = s - cs;
+            int wheat = w - cw;
+            int rice = r - cr;
+
+            try {
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+                params.add(new BasicNameValuePair(TAG_USERNAME, name));
+                params.add(new BasicNameValuePair(TAG_SUGAR, String.valueOf(sugar)));
+                params.add(new BasicNameValuePair(TAG_WHEAT, String.valueOf(wheat)));
+                params.add(new BasicNameValuePair(TAG_RICE, String.valueOf(rice)));
+
+                hay = jsonParser.makeHttpRequest(
+                        U_URL, "POST", params);
+
+                // full json response
+                Log.d("Post Comment attempt", hay.toString());
+
+                // json success element
+                success = hay.getInt(TAG_SUCCESS);
+                if (success == 1) {
+                    Log.d("purchase updated!", hay.toString());
+                    finish();
+                    return hay.getString(TAG_MESSAGE);
+                } else {
+                    Log.d("purchase update failure!", hay.getString(TAG_MESSAGE));
+                    return hay.getString(TAG_MESSAGE);
+
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
+            return null;
+
         }
 
+        @Override
+        protected void onPostExecute(String file_url) {
+            if (file_url != null) {
+                Toast.makeText(DistributorEntry.this, "Purchase updated successfully!", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }

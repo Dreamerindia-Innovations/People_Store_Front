@@ -154,42 +154,48 @@
             android:src="@drawable/jan"
             android:background="@android:color/transparent"
             android:id="@+id/jan"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:onClick="mStock" />
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/feb"
             android:background="@android:color/transparent"
             android:id="@+id/feb"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:onClick="mStock"/>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/mar"
             android:background="@android:color/transparent"
             android:id="@+id/mar"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:onClick="mStock"/>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/apr"
             android:id="@+id/apr"
             android:background="@android:color/transparent"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:onClick="mStock" />
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/may"
             android:background="@android:color/transparent"
             android:id="@+id/may"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:onClick="mStock" />
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/jun"
             android:background="@android:color/transparent"
             android:id="@+id/jun"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:onClick="mStock"/>
         </TableLayout>
     <TableLayout
         android:layout_width="fill_parent"
@@ -204,42 +210,48 @@
             android:src="@drawable/jul"
             android:background="@android:color/transparent"
             android:id="@+id/jul"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:onClick="mStock" />
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/aug"
             android:background="@android:color/transparent"
             android:id="@+id/aug"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:onClick="mStock"/>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/sep"
             android:background="@android:color/transparent"
             android:id="@+id/sep"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:onClick="mStock" />
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/oct"
             android:background="@android:color/transparent"
             android:id="@+id/oct"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:onClick="mStock" />
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/nov"
             android:background="@android:color/transparent"
             android:id="@+id/nov"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:onClick="mStock" />
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/dec"
             android:background="@android:color/transparent"
             android:id="@+id/dec"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:onClick="mStock" />
     </TableLayout>
 
 

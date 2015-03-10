@@ -14,28 +14,47 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/dTitle"
+            android:text="Monthly Stock Status"
             android:id="@+id/heading"
             android:gravity="center"
             android:textSize="19sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/branch"
-            android:id="@+id/branch"
-            android:gravity="center"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp" />
+            android:layout_height="53dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:text="@string/branch"
+                android:id="@+id/branch"
+                android:gravity="left"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tMonth"
+                android:text="@string/month"
+                android:gravity="right"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <TableLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="250dp"
+        android:layout_width="fill_parent"
+        android:layout_height="230dp"
         android:layout_below="@+id/caption"
         android:layout_marginTop="10dp"
         android:id="@+id/CHDetails"
@@ -49,16 +68,31 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cardID"
-                android:text="@string/ID"
-                android:layout_marginLeft="7dp" />
+                android:id="@+id/pDetail"
+                android:text="@string/purchase"
+                android:textStyle="italic"
+                android:layout_gravity="center" />
+        </TableRow>
 
-            <EditText
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cardID"
+                android:text="Card ID"
+                android:layout_marginTop="12dp" />
+
+            <TextView
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/eddcardID"
-                android:layout_marginLeft="7dp"
-                android:textSize="18sp" />
+                android:id="@+id/ecardID"
+                android:textSize="18sp"
+                android:layout_marginTop="12dp" />
         </TableRow>
 
         <TableRow
@@ -71,16 +105,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/cardName"
                 android:text="@string/name"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="12dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/ecardName"
-                android:layout_marginLeft="7dp"
                 android:textSize="18sp"
-                android:visibility="invisible" />
+                android:layout_marginTop="12dp" />
         </TableRow>
 
         <TableRow
@@ -93,16 +125,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/chSugar"
                 android:text="@string/sugar"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="12dp" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/eddcardSugar"
-                android:layout_marginLeft="7dp"
-                android:inputType="number"
-                android:textSize="18sp" />
+                android:id="@+id/ecardSugar"
+                android:textSize="18sp"
+                android:layout_marginTop="12dp" />
 
         </TableRow>
 
@@ -116,16 +146,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/chWheat"
                 android:text="@string/Wheat"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="12dp" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/eddcardWheat"
-                android:layout_marginLeft="7dp"
-                android:inputType="number"
-                android:textSize="18sp" />
+                android:id="@+id/ecardWheat"
+                android:textSize="18sp"
+                android:layout_marginTop="12dp" />
         </TableRow>
 
         <TableRow
@@ -138,52 +166,31 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/chRice"
                 android:text="@string/Rice"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="12dp" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/eddcardRice"
-                android:layout_marginLeft="7dp"
-                android:inputType="number"
-                android:textSize="18sp" />
+                android:id="@+id/ecardRice"
+                android:textSize="18sp"
+                android:layout_marginTop="12dp" />
+
 
         </TableRow>
-
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:gravity="center_horizontal">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:id="@+id/pull"
-                android:text="@string/pull"
-                style="android:attr/buttonBarButtonStyle"
-                android:onClick="lookUp"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/store"
-                android:layout_marginTop="10dp"
-                android:id="@+id/store"
-                style="android:attr/buttonBarButtonStyle"
-                android:onClick="update"/>
-        </TableRow>
+<TableRow><TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/findDist"
+    android:textSize="18sp"
+    android:visibility="invisible" /></TableRow>
     </TableLayout>
 
     <TableLayout
 
         android:orientation="vertical"
-        android:layout_width="200dp"
-        android:layout_height="250dp"
-        android:layout_below="@id/caption"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/CHDetails"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/CHDetails"
         android:background="@drawable/borders"
         android:id="@+id/StockDetails">
 
@@ -202,24 +209,6 @@
                 android:layout_gravity="center" />
         </TableRow>
 
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:gravity="center_horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tMonth"
-                android:text="@string/month"
-                android:layout_marginTop="10dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/eMonth"
-                android:textSize="18sp"
-                android:layout_marginTop="10dp" />
-        </TableRow>
 
         <TableRow
             android:layout_height="wrap_content"
@@ -231,14 +220,16 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/bSugar"
                 android:text="@string/sugar"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="30dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/ebSugar"
                 android:textSize="18sp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="30dp" />
 
         </TableRow>
 
@@ -252,14 +243,16 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/bWheat"
                 android:text="@string/Wheat"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="30dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/ebWheat"
                 android:textSize="18sp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="30dp" />
         </TableRow>
 
         <TableRow
@@ -272,14 +265,16 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/bRice"
                 android:text="@string/Rice"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="30dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/ebRice"
                 android:textSize="18sp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="30dp" />
 
         </TableRow>
 
@@ -294,57 +289,5 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/border"
-        android:id="@+id/tableOne"
-        android:layout_alignParentRight="true"
-        android:orientation="vertical"
-        android:layout_below="@+id/CHDetails">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:id="@+id/df"
-            android:text="@string/df"
-            android:textStyle="italic"
-            android:textSize="20sp"
-            android:layout_alignTop="@+id/txt"
-            android:layout_centerHorizontal="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Title" />
-
-        <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/title"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Message"/>
-
-        <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/message" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit &amp; submit"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/tableOne"
-            android:layout_gravity="bottom|right"
-            android:onClick="dFeedbackSubmit"/>
-
-    </LinearLayout>
-
-
-</RelativeLayout><!-- From: file:/C:/Users/user/Dropbox/People_Store_Front/app/src/main/res/layout/distributor_entry.xml -->
+</RelativeLayout>

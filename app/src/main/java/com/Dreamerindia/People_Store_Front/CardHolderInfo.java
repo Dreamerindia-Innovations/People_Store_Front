@@ -65,7 +65,73 @@ public class CardHolderInfo extends Activity {
         // Loading Profile in Background Thread
         new LoadProfile().execute();
     }
+    public void mStock(View v) {
+        switch (v.getId()) {
 
+            case R.id.jan:
+                Intent jan = new Intent (this,Monthly_Stock.class);
+                jan.putExtra("month","Jan");
+                startActivity(jan);
+                break;
+            case R.id.feb:
+                Intent feb = new Intent (this,Monthly_Stock.class);
+                feb.putExtra("month","Feb");
+                startActivity(feb);
+                break;
+            case R.id.mar:
+                Intent mar = new Intent (this,Monthly_Stock.class);
+                mar.putExtra("month","March");
+                startActivity(mar);
+                break;
+            case R.id.apr:
+                Intent apr = new Intent (this,Monthly_Stock.class);
+                apr.putExtra("month","Apr");
+                startActivity(apr);
+                break;
+            case R.id.may:
+                Intent may = new Intent (this,Monthly_Stock.class);
+                may.putExtra("month","Jan");
+                startActivity(may);
+                break;
+            case R.id.jun:
+                Intent jun = new Intent (this,Monthly_Stock.class);
+                jun.putExtra("month","Jun");
+                startActivity(jun);
+                break;
+            case R.id.jul:
+                Intent jul = new Intent (this,Monthly_Stock.class);
+                jul.putExtra("month","Jul");
+                startActivity(jul);
+                break;
+            case R.id.aug:
+                Intent aug = new Intent (this,Monthly_Stock.class);
+                aug.putExtra("month","Aug");
+                startActivity(aug);
+                break;
+            case R.id.sep:
+                Intent sep = new Intent (this,Monthly_Stock.class);
+                sep.putExtra("month","Sep");
+                startActivity(sep);
+                break;
+            case R.id.oct:
+                Intent oct = new Intent (this,Monthly_Stock.class);
+                oct.putExtra("month","Oct");
+                startActivity(oct);
+                break;
+            case R.id.nov:
+                Intent nov = new Intent (this,Monthly_Stock.class);
+                nov.putExtra("month","Nov");
+                startActivity(nov);
+                break;
+            case R.id.dec:
+                Intent dec = new Intent (this,Monthly_Stock.class);
+                dec.putExtra("month","Dec");
+                startActivity(dec);
+                break;
+        }
+
+
+    }
     public void storeComment(View v) {
         time = (CheckBox) findViewById(R.id.time);
         response = (CheckBox) findViewById(R.id.response);
@@ -112,10 +178,10 @@ public class CardHolderInfo extends Activity {
             // Building Parameters
             String json = null;
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(CardHolderInfo.this);
-            String post_username = sp.getString("username", "anon");
+            String post_username = sp.getString(TAG_USERNAME, "anon");
             try {
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("username", post_username));
+                params.add(new BasicNameValuePair(TAG_USERNAME, post_username));
                 HttpClient httpclient = new DefaultHttpClient();
                 HttpPost httppost = new HttpPost(URL);
                 httppost.setEntity(new UrlEncodedFormEntity(params));
@@ -140,7 +206,7 @@ public class CardHolderInfo extends Activity {
 //            pDialog.dismiss();
             try {
                 hay = new JSONObject(json);
-                JSONArray user = hay.getJSONArray("user");
+                JSONArray user = hay.getJSONArray(TAG_PROFILE);
                 JSONObject jb = user.getJSONObject(0);
                 String userID = jb.getString(TAG_PROFILE);
                 String uname = jb.getString(TAG_U_NAME);

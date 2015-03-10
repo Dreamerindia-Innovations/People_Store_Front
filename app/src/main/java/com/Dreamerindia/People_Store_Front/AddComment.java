@@ -1,13 +1,5 @@
 package com.Dreamerindia.People_Store_Front;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -18,17 +10,26 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AddComment extends Activity implements OnClickListener{
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class AddComment extends Activity implements OnClickListener {
 
     private EditText title, message;
-    private Button  mSubmit;
-    String time,response,measure;
+    private Button mSubmit;
+    String time, response, measure;
     String post_username;
-  private ProgressDialog pDialog;
+    private ProgressDialog pDialog;
     JSONParser jsonParser = new JSONParser();
     private static final String POST_COMMENT_URL = "http://www.EmbeddedCollege.org/psfwebservices/addcomment.php";
     private static final String TAG_SUCCESS = "success";
@@ -40,10 +41,10 @@ public class AddComment extends Activity implements OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_comment);
 
-        title = (EditText)findViewById(R.id.title);
-        message = (EditText)findViewById(R.id.message);
+        title = (EditText) findViewById(R.id.title);
+        message = (EditText) findViewById(R.id.message);
 
-        mSubmit = (Button)findViewById(R.id.submit);
+        mSubmit = (Button) findViewById(R.id.submit);
         mSubmit.setOnClickListener(this);
         Intent intent = getIntent();
         time = intent.getExtras().getString("time");
@@ -55,7 +56,13 @@ public class AddComment extends Activity implements OnClickListener{
 
     @Override
     public void onClick(View v) {
+        hideSoftKeyboard(v);
         new PostComment().execute();
+    }
+
+    public void hideSoftKeyboard(View v) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 
     class PostComment extends AsyncTask<String, String, String> {
@@ -109,7 +116,7 @@ public class AddComment extends Activity implements OnClickListener{
                     Log.d("Comment Added!", json.toString());
                     finish();
                     return json.getString(TAG_MESSAGE);
-                }else{
+                } else {
                     Log.d("Comment Failure!", json.getString(TAG_MESSAGE));
                     return json.getString(TAG_MESSAGE);
 
@@ -125,8 +132,8 @@ public class AddComment extends Activity implements OnClickListener{
         protected void onPostExecute(String file_url) {
             // dismiss the dialog once product deleted
             pDialog.dismiss();
-            if (file_url != null){
-                Toast.makeText(AddComment.this, "Feedback from "+post_username +" posted successfully!", Toast.LENGTH_LONG).show();
+            if (file_url != null) {
+                Toast.makeText(AddComment.this, "Feedback from " + post_username + " posted successfully!", Toast.LENGTH_LONG).show();
             }
 
         }

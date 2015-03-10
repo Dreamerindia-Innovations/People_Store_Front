@@ -95,21 +95,22 @@ public class ReadComments extends ListActivity {
                 String time = c.getString(TAG_TIME);
                 String response = c.getString(TAG_RESPONSE);
                 String measure = c.getString(TAG_MEASURE);
+                String msg = content+". "+time+", "+response+", "+measure+".";
 
                 // creating new HashMap
                 HashMap<String, String> map = new HashMap<String, String>();
 
                 map.put(TAG_TITLE, title);
-                map.put(TAG_MESSAGE, content);
+                map.put(TAG_MESSAGE, msg);
                 map.put(TAG_USERNAME, username);
-                map.put(TAG_TIME, time);
-                map.put(TAG_RESPONSE, response);
-                map.put(TAG_MEASURE, measure);
+//                map.put(TAG_TIME, time);
+//                map.put(TAG_RESPONSE, response);
+//                map.put(TAG_MEASURE, measure);
 
                 // adding HashList to ArrayList
                 mCommentList.add(map);
 
-                // annndddd, our JSON data is up to date same with our array
+                // and, our JSON data is up to date same with our array
                 // list
             }
 
@@ -145,11 +146,9 @@ public class ReadComments extends ListActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-
                 // This method is triggered if an item is click within our
                 // list. For our example we won't be using this, but
                 // it is useful to know in real life applications.
-
             }
         });
     }

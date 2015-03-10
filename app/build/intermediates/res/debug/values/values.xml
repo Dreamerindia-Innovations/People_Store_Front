@@ -2,22 +2,14 @@
 <resources>
     <!-- From: file:/C:/Users/user/Dropbox/People_Store_Front/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string-array name="tradelist">
-        <item>Pheriperals</item>
-        <item>Tv Boards</item>
-        <item>Amplifiers</item>
-        <item>Speakers</item>
-        <item>DVD Players</item>
-
-    </string-array>
     <string name="Collector">District Collector</string>
     <string name="Distributor">Distributor</string>
     <string name="ID">Card Number : </string>
     <string name="Measure">Correct Measuring</string>
     <string name="Ration_Holder">Ration Card Holder</string>
-    <string name="Rice">Rice</string>
+    <string name="Rice">Rice (Kgs)</string>
     <string name="Time">Good Time Maintaining</string>
-    <string name="Wheat">Wheat</string>
+    <string name="Wheat">Wheat (Kgs)</string>
     <string name="action_websearch">Web search</string>
     <string name="app_name">People Store Front</string>
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
@@ -30,18 +22,19 @@
     <string name="drawer_close">Close navigation drawer</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="members">No. of Members : </string>
-    <string name="month">Month</string>
+    <string name="month">Month : </string>
     <string name="name">Name : </string>
     <string name="other">Others</string>
     <string name="post_comment">Post Comment</string>
     <string name="pull">Look up</string>
-    <string name="read_comments_title">Recent Comments</string>
+    <string name="purchase"><u>Purchase details</u></string>
+    <string name="read_comments_title">Recent Feedback</string>
     <string name="response">Good Response</string>
     <string name="sDetail"><u>Stock Details</u></string>
     <string name="sex">Sex : </string>
     <string name="store">Update</string>
     <string name="sub">Submit</string>
-    <string name="sugar">Sugar</string>
+    <string name="sugar">Sugar (Kgs)</string>
     <!-- From: file:/C:/Users/user/Dropbox/People_Store_Front/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">

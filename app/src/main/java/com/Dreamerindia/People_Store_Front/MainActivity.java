@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -106,6 +107,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.register:
+                hideSoftKeyboard(v);
                 Intent i = new Intent(this, Register.class);
                 startActivity(i);
                 break;
@@ -114,7 +116,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
         }
     }
-
+    public void hideSoftKeyboard(View v) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+    }
 
     class AttemptLogin extends AsyncTask<String, String, String> {
 
