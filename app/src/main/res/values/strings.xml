@@ -23,6 +23,7 @@
     <string name="Measure">Correct Measuring</string>
     <string name="other">Others</string>
     <string name="dTitle">Distributor Entry Form</string>
+    <string name="cTitle">Collector Entry Form</string>
     <string name="sugar">Sugar (Kgs)</string>
     <string name="Wheat">Wheat (Kgs)</string>
     <string name="Rice">Rice (Kgs)</string>
@@ -33,4 +34,5 @@
     <string name="sub">Submit</string>
     <string name="pull">Look up</string>
     <string name="purchase"><u>Purchase details</u></string>
+    <string name="rf">Review Feedback</string>
 </resources>

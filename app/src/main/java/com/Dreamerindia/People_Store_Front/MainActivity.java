@@ -101,8 +101,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 } else {
                     if (!isNetworkConnected()) {
                         Toast.makeText(getApplicationContext(), "Please Enable Internet connection", Toast.LENGTH_SHORT).show();
-                    }else {
+                    } else {
                         new AttemptLogin().execute();
+                        user.setText("");
+                        pass.setText("");
                     }
                 }
                 break;
@@ -113,9 +115,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
 
             default:
+
                 break;
         }
     }
+
     public void hideSoftKeyboard(View v) {
         InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
@@ -172,8 +176,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     } else if (radioGroupId.getCheckedRadioButtonId() == R.id.distributor) {
                         i = new Intent(MainActivity.this, DistributorEntry.class);
                     } else if (radioGroupId.getCheckedRadioButtonId() == R.id.Collector) {
-                        i = new Intent(MainActivity.this, ReadComments.class);
+                        i = new Intent(MainActivity.this, CollectorEntry.class);
                     }
+
                     startActivity(i);
 //                    finish();
                     return json.getString(TAG_MESSAGE);

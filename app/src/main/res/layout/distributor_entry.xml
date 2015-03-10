@@ -72,7 +72,7 @@
                 android:id="@+id/cardName"
                 android:text="@string/name"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="2dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -343,6 +343,26 @@
             android:layout_below="@+id/tableOne"
             android:layout_gravity="bottom|right"
             android:onClick="dFeedbackSubmit"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ts"
+            android:visibility="invisible" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tw"
+            android:visibility="invisible" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tr"
+            android:visibility="invisible" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/di"
+            android:visibility="invisible" />
 
     </LinearLayout>
 

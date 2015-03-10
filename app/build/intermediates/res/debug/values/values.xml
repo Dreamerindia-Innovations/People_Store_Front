@@ -14,6 +14,7 @@
     <string name="app_name">People Store Front</string>
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
     <string name="branch">Branch Name:  </string>
+    <string name="cTitle">Collector Entry Form</string>
     <string name="cal">Stock details in Calendar View</string>
     <string name="caption">People Store Front</string>
     <string name="dFeedback">Distributor Feedback</string>
@@ -30,6 +31,7 @@
     <string name="purchase"><u>Purchase details</u></string>
     <string name="read_comments_title">Recent Feedback</string>
     <string name="response">Good Response</string>
+    <string name="rf">Review Feedback</string>
     <string name="sDetail"><u>Stock Details</u></string>
     <string name="sex">Sex : </string>
     <string name="store">Update</string>

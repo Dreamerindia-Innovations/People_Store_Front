@@ -68,9 +68,6 @@
       </layout>
     </layouts>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.Dreamerindia.People_Store_Front" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="335c84a8-4247-4974-a88e-7f0347d7d211" name="Default" comment="" />
     <ignored path="leodemo.iws" />
@@ -93,55 +90,69 @@
     <favorites_list name="leodemo" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="DistributorEntry.java" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/DistributorEntry.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.19895288" vertical-offset="1025" max-vertical-offset="3247">
-                  <caret line="105" column="59" selection-start-line="105" selection-start-column="59" selection-end-line="105" selection-end-column="59" />
-                  <folding>
-                    <element signature="method#dFeedbackSubmit#0;class#DistributorEntry#0" expanded="false" />
-                    <element signature="class#LoadStock#0;class#DistributorEntry#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="distributor_entry.xml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/distributor_entry.xml">
-              <provider editor-type-id="android-designer">
-                <state />
-              </provider>
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-9.52" vertical-offset="3519" max-vertical-offset="6035">
-                  <caret line="221" column="19" selection-start-line="221" selection-start-column="19" selection-end-line="221" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="distributor_entry.xml" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/distributor_entry.xml">
-              <provider selected="true" editor-type-id="android-designer">
-                <state />
-              </provider>
-              <provider editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="2023" max-vertical-offset="6035">
-                  <caret line="137" column="52" selection-start-line="137" selection-start-column="52" selection-end-line="137" selection-end-column="52" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="CollectorEntry.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/CollectorEntry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2088" max-vertical-offset="2329">
+              <caret line="126" column="35" selection-start-line="126" selection-start-column="35" selection-end-line="126" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2596#2597#0" expanded="true" />
+                <element signature="e#2640#2641#0" expanded="true" />
+                <element signature="e#3368#3383#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="collector_entry.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/collector_entry.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="4046">
+              <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.59624416" vertical-offset="1182" max-vertical-offset="3264">
+              <caret line="106" column="41" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="2550">
+              <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="1156">
+              <caret line="57" column="77" selection-start-line="57" selection-start-column="77" selection-end-line="57" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -844,8 +855,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/trade_item_three.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/trade_item_four.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/trade_item_one.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/dreamerindia/LeoDemo/Trade_Item_1.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/dreamerindia/LeoDemo/Trade_Item_2.java" />
@@ -876,7 +885,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/dreamerindia/Rajendra_Electronics/ReadComments.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/dreamerindia/Rajendra_Electronics/CardHolderInfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/dreamerindia/Rajendra_Electronics/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/borders.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/add_comment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/single_post.xml" />
@@ -884,17 +892,20 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/JSONParser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/DAddComment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/ReadComments.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/monthly_status.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/CardHolderInfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/cardholderinfo.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/Monthly_Stock.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/read_comments.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/AddComment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/distributor_entry.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/DistributorEntry.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/collector_entry.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/CollectorEntry.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1158,6 +1169,7 @@
       <recent name="G:\software\Android\AndroidStudioProjects\2015\Feb\23022015\Rajendra Electronics\app\src\main\res\anim" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.Dreamerindia.People_Store_Front" />
       <recent name="com.dreamerindia.LeoDemo" />
     </key>
   </component>
@@ -1359,7 +1371,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.67320263" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6094771" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6094771" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09736457" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1396,26 +1408,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/drawer_list_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="391">
@@ -1427,17 +1419,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="510">
           <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="e#697#715#0" expanded="true" />
-            <element signature="e#953#971#0" expanded="true" />
-            <element signature="e#1413#1431#0" expanded="true" />
-            <element signature="e#1557#1575#0" expanded="true" />
-            <element signature="e#1703#1721#0" expanded="true" />
-            <element signature="e#1845#1863#0" expanded="true" />
-            <element signature="e#1985#2003#0" expanded="true" />
-            <element signature="e#2126#2144#0" expanded="true" />
-            <element signature="e#2269#2287#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1480,17 +1462,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="510">
           <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="e#697#715#0" expanded="true" />
-            <element signature="e#953#971#0" expanded="true" />
-            <element signature="e#1413#1431#0" expanded="true" />
-            <element signature="e#1557#1575#0" expanded="true" />
-            <element signature="e#1703#1721#0" expanded="true" />
-            <element signature="e#1845#1863#0" expanded="true" />
-            <element signature="e#1985#2003#0" expanded="true" />
-            <element signature="e#2126#2144#0" expanded="true" />
-            <element signature="e#2269#2287#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1533,17 +1505,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="510">
           <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="e#697#715#0" expanded="true" />
-            <element signature="e#953#971#0" expanded="true" />
-            <element signature="e#1413#1431#0" expanded="true" />
-            <element signature="e#1557#1575#0" expanded="true" />
-            <element signature="e#1703#1721#0" expanded="true" />
-            <element signature="e#1845#1863#0" expanded="true" />
-            <element signature="e#1985#2003#0" expanded="true" />
-            <element signature="e#2126#2144#0" expanded="true" />
-            <element signature="e#2269#2287#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1662,17 +1624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2533">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/android-sdk/sources/android-14/java/lang/Override.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43515357" vertical-offset="0" max-vertical-offset="586">
@@ -1737,45 +1688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3327645" vertical-offset="5228" max-vertical-offset="10200">
           <caret line="352" column="19" selection-start-line="352" selection-start-column="19" selection-end-line="352" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9129693" vertical-offset="383" max-vertical-offset="1105">
-          <caret line="54" column="75" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
-          <folding>
-            <element signature="e#697#715#0" expanded="true" />
-            <element signature="e#953#971#0" expanded="true" />
-            <element signature="e#1413#1431#0" expanded="true" />
-            <element signature="e#1557#1575#0" expanded="true" />
-            <element signature="e#1703#1721#0" expanded="true" />
-            <element signature="e#1845#1863#0" expanded="true" />
-            <element signature="e#1985#2003#0" expanded="true" />
-            <element signature="e#2126#2144#0" expanded="true" />
-            <element signature="e#2269#2287#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/ReadComments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2617801" vertical-offset="1142" max-vertical-offset="2669">
-          <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
-          <folding>
-            <element signature="docComment;method#updateList#0;class#ReadComments#0" expanded="false" />
-            <element signature="e#4830#4903#0" expanded="false" />
-            <element signature="e#5610#5658#0" expanded="false" />
-            <element signature="e#6010#6068#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24955437" vertical-offset="13" max-vertical-offset="714">
-          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1845,14 +1757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82198954" vertical-offset="957" max-vertical-offset="3179">
-          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/AddComment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47469458" vertical-offset="357" max-vertical-offset="2159">
@@ -1862,24 +1766,125 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/distributor_entry.xml">
-      <provider editor-type-id="android-designer">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.52" vertical-offset="3519" max-vertical-offset="6035">
-          <caret line="221" column="19" selection-start-line="221" selection-start-column="19" selection-end-line="221" selection-end-column="19" />
-          <folding />
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5729" max-vertical-offset="6375">
+          <caret line="359" column="45" selection-start-line="359" selection-start-column="45" selection-end-line="359" selection-end-column="45" />
+          <folding>
+            <element signature="e#594#610#0" expanded="true" />
+            <element signature="e#947#963#0" expanded="true" />
+            <element signature="e#1846#1858#0" expanded="true" />
+            <element signature="e#2549#2563#0" expanded="true" />
+            <element signature="e#3355#3370#0" expanded="true" />
+            <element signature="e#4162#4177#0" expanded="true" />
+            <element signature="e#4967#4981#0" expanded="true" />
+            <element signature="e#5815#5829#0" expanded="true" />
+            <element signature="e#6086#6101#0" expanded="true" />
+            <element signature="e#7090#7107#0" expanded="true" />
+            <element signature="e#7584#7599#0" expanded="true" />
+            <element signature="e#8292#8307#0" expanded="true" />
+            <element signature="e#9003#9018#0" expanded="true" />
+            <element signature="e#9712#9726#0" expanded="true" />
+            <element signature="e#10894#10906#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/DistributorEntry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19895288" vertical-offset="1025" max-vertical-offset="3247">
-          <caret line="105" column="59" selection-start-line="105" selection-start-column="59" selection-end-line="105" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="836" max-vertical-offset="3927">
+          <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
           <folding>
             <element signature="method#dFeedbackSubmit#0;class#DistributorEntry#0" expanded="false" />
+            <element signature="e#4939#4978#0" expanded="true" />
+            <element signature="e#5183#5222#0" expanded="true" />
             <element signature="class#LoadStock#0;class#DistributorEntry#0" expanded="false" />
+            <element signature="e#5364#5365#0" expanded="true" />
+            <element signature="e#5408#5409#0" expanded="true" />
+            <element signature="e#5753#5768#0" expanded="true" />
+            <element signature="class#LoadName#0;class#DistributorEntry#0" expanded="false" />
+            <element signature="e#7731#7746#0" expanded="true" />
+            <element signature="e#9351#9352#0" expanded="true" />
+            <element signature="e#9395#9396#0" expanded="true" />
+            <element signature="e#10287#10302#0" expanded="true" />
+            <element signature="e#11768#11769#0" expanded="true" />
+            <element signature="e#11812#11813#0" expanded="true" />
+            <element signature="e#12845#12860#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/ReadComments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2547994" vertical-offset="0" max-vertical-offset="2669">
+          <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
+          <folding>
+            <element signature="docComment;method#updateList#0;class#ReadComments#0" expanded="false" />
+            <element signature="e#4830#4903#0" expanded="false" />
+            <element signature="e#5610#5658#0" expanded="false" />
+            <element signature="e#6010#6068#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50364965" vertical-offset="81" max-vertical-offset="748">
+          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="1156">
+          <caret line="57" column="77" selection-start-line="57" selection-start-column="77" selection-end-line="57" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/collector_entry.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="4046">
+          <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/CollectorEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2088" max-vertical-offset="2329">
+          <caret line="126" column="35" selection-start-line="126" selection-start-column="35" selection-end-line="126" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2596#2597#0" expanded="true" />
+            <element signature="e#2640#2641#0" expanded="true" />
+            <element signature="e#3368#3383#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2533">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/Dreamerindia/People_Store_Front/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59624416" vertical-offset="1182" max-vertical-offset="3264">
+          <caret line="106" column="41" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -54,6 +54,9 @@
         <activity
             android:name="com.Dreamerindia.People_Store_Front.Monthly_Stock"
             android:label="@string/app_name" />
+        <activity
+            android:name="com.Dreamerindia.People_Store_Front.CollectorEntry"
+            android:label="@string/app_name" />
     </application>
 
 </manifest>

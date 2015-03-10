@@ -32,7 +32,7 @@ import java.util.List;
  * Created by user on 08-03-2015.
  */
 public class DistributorEntry extends Activity {
-    TextView eMonth, eSugar, eWheat, eRice, eCardName, branchArea;
+    TextView eMonth, eSugar, eWheat, eRice, eCardName, branchArea, ts, tw, tr, di;
     EditText cNumber, cSugar, cWheat, cRice, t, m;
     JSONArray user;
     JSONObject hay;
@@ -40,6 +40,7 @@ public class DistributorEntry extends Activity {
     private static final String URL = "http://www.EmbeddedCollege.org/psfwebservices/dselect.php";
     private static final String N_URL = "http://www.EmbeddedCollege.org/psfwebservices/dnamepull.php";
     private static final String U_URL = "http://www.EmbeddedCollege.org/psfwebservices/dupdate.php";
+    private static final String D_URL = "http://www.EmbeddedCollege.org/psfwebservices/dsupdate.php";
     private static final String TAG_PROFILE = "user";
     private static final String TAG_USERNAME = "username";
     private static final String TAG_U_NAME = "uname";
@@ -48,6 +49,7 @@ public class DistributorEntry extends Activity {
     private static final String TAG_SUGAR = "sugar";
     private static final String TAG_RICE = "rice";
     private static final String TAG_WHEAT = "wheat";
+    private static final String TAG_DISTRI = "distrib";
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
 
@@ -60,6 +62,10 @@ public class DistributorEntry extends Activity {
         eSugar = (TextView) findViewById(R.id.ebSugar);
         eWheat = (TextView) findViewById(R.id.ebWheat);
         eRice = (TextView) findViewById(R.id.ebRice);
+        ts = (TextView) findViewById(R.id.ts);
+        tw = (TextView) findViewById(R.id.tw);
+        tr = (TextView) findViewById(R.id.tr);
+        di = (TextView) findViewById(R.id.di);
 
         cNumber = (EditText) findViewById(R.id.eddcardID);
         eCardName = (TextView) findViewById(R.id.cardName);
@@ -93,19 +99,31 @@ public class DistributorEntry extends Activity {
 
     public void lookUp(View v) {
         hideSoftKeyboard(v);
-        eCardName.setText(getResources().getString(R.string.name));
         new LoadName().execute();
     }
 
     public void update(View v) {
         hideSoftKeyboard(v);
+        new LoadStock().execute();
         String sug = cSugar.getText().toString();
         String whe = cWheat.getText().toString();
         String ric = cRice.getText().toString();
-        if(sug.equals("")||whe.equals("")||ric.equals("")){
-            Toast.makeText(getApplicationContext(),"Please fill all the details",Toast.LENGTH_SHORT).show();
-        }else {
-            new UpdateStock().execute();
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(DistributorEntry.this);
+        String post_username = sp.getString(TAG_USERNAME, "anon");
+        String check = di.getText().toString();
+        if (post_username.equals(check)) {
+
+            if (sug.equals("") || whe.equals("") || ric.equals("")) {
+                Toast.makeText(getApplicationContext(), "Please fill all the details", Toast.LENGTH_SHORT).show();
+            } else {
+                new UpdateStock().execute();
+                new DUpdateStock().execute();
+                eCardName.setText(getResources().getString(R.string.name));
+
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), "Card Number you have entered is not belongs to this Area", Toast.LENGTH_SHORT).show();
+            eCardName.setText(getResources().getString(R.string.name));
         }
     }
 
@@ -204,8 +222,16 @@ public class DistributorEntry extends Activity {
                 hay = new JSONObject(json);
                 JSONArray user = hay.getJSONArray(TAG_PROFILE);
                 JSONObject jb = user.getJSONObject(0);
-                String usern = jb.getString(TAG_U_NAME);
-                eCardName.append(" " + usern);
+                String userN = jb.getString(TAG_U_NAME);
+                String sug = jb.getString(TAG_SUGAR);
+                String whe = jb.getString(TAG_WHEAT);
+                String ric = jb.getString(TAG_RICE);
+                String dis = jb.getString(TAG_DISTRI);
+                eCardName.append(" " + userN);
+                ts.append(sug);
+                tw.append(whe);
+                tr.append(ric);
+                di.setText(dis);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -213,7 +239,6 @@ public class DistributorEntry extends Activity {
     }
 
     class UpdateStock extends AsyncTask<String, String, String> {
-
 
         @Override
         protected void onPreExecute() {
@@ -226,22 +251,22 @@ public class DistributorEntry extends Activity {
             String sug = cSugar.getText().toString();
             String whe = cWheat.getText().toString();
             String ric = cRice.getText().toString();
-            String esug = eSugar.getText().toString();
-            String ewhe = eWheat.getText().toString();
-            String eric = eRice.getText().toString();
+            String esug = ts.getText().toString();
+            String ewhe = tw.getText().toString();
+            String eric = tr.getText().toString();
             int cs = Integer.parseInt(sug);
             int cw = Integer.parseInt(whe);
             int cr = Integer.parseInt(ric);
             int s = Integer.parseInt(esug);
             int w = Integer.parseInt(ewhe);
             int r = Integer.parseInt(eric);
-            int sugar = s - cs;
-            int wheat = w - cw;
-            int rice = r - cr;
+            int sugar = s + cs;
+            int wheat = w + cw;
+            int rice = r + cr;
 
             try {
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair(TAG_USERNAME, name));
+                params.add(new BasicNameValuePair(TAG_PROFILE, name));
                 params.add(new BasicNameValuePair(TAG_SUGAR, String.valueOf(sugar)));
                 params.add(new BasicNameValuePair(TAG_WHEAT, String.valueOf(wheat)));
                 params.add(new BasicNameValuePair(TAG_RICE, String.valueOf(rice)));
@@ -255,18 +280,80 @@ public class DistributorEntry extends Activity {
                 // json success element
                 success = hay.getInt(TAG_SUCCESS);
                 if (success == 1) {
-                    Log.d("purchase updated!", hay.toString());
-                    finish();
+                    Log.d("updated in CH Log!", hay.toString());
                     return hay.getString(TAG_MESSAGE);
                 } else {
-                    Log.d("purchase update failure!", hay.getString(TAG_MESSAGE));
+                    Log.d("Failed to update in CH Log", hay.getString(TAG_MESSAGE));
+                    return hay.getString(TAG_MESSAGE);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String file_url) {
+            if (file_url != null) {
+                Toast.makeText(DistributorEntry.this, "Purchase updated successfully!", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    class DUpdateStock extends AsyncTask<String, String, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        protected String doInBackground(String... args) {
+            int success;
+            String sug = cSugar.getText().toString();
+            String whe = cWheat.getText().toString();
+            String ric = cRice.getText().toString();
+            String dsug = eSugar.getText().toString();
+            String dwhe = eWheat.getText().toString();
+            String dric = eRice.getText().toString();
+            int cs = Integer.parseInt(sug);
+            int cw = Integer.parseInt(whe);
+            int cr = Integer.parseInt(ric);
+            int ds = Integer.parseInt(dsug);
+            int dw = Integer.parseInt(dwhe);
+            int dr = Integer.parseInt(dric);
+            int dsugar = ds - cs;
+            int dwheat = dw - cw;
+            int drice = dr - cr;
+
+
+            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(DistributorEntry.this);
+            String post_username = sp.getString(TAG_USERNAME, "anon");
+            try {
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+                params.add(new BasicNameValuePair(TAG_PROFILE, post_username));
+                params.add(new BasicNameValuePair(TAG_SUGAR, String.valueOf(dsugar)));
+                params.add(new BasicNameValuePair(TAG_WHEAT, String.valueOf(dwheat)));
+                params.add(new BasicNameValuePair(TAG_RICE, String.valueOf(drice)));
+
+                hay = jsonParser.makeHttpRequest(
+                        D_URL, "POST", params);
+
+                // full json response
+                Log.d("Post Comment attempt", hay.toString());
+
+                // json success element
+                success = hay.getInt(TAG_SUCCESS);
+                if (success == 1) {
+                    Log.d("updated in D Log!", hay.toString());
+                    return hay.getString(TAG_MESSAGE);
+                } else {
+                    Log.d("Failed to update in D Log!", hay.getString(TAG_MESSAGE));
                     return hay.getString(TAG_MESSAGE);
 
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             return null;
 
         }
@@ -275,6 +362,9 @@ public class DistributorEntry extends Activity {
         protected void onPostExecute(String file_url) {
             if (file_url != null) {
                 Toast.makeText(DistributorEntry.this, "Purchase updated successfully!", Toast.LENGTH_LONG).show();
+                cSugar.setText("");
+                cWheat.setText("");
+                cRice.setText("");
             }
         }
     }
