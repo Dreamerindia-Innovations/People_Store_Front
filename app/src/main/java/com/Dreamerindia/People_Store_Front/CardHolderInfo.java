@@ -38,6 +38,7 @@ public class CardHolderInfo extends Activity {
     private ProgressDialog pDialog;
     JSONArray user;
     JSONObject hay;
+    long lastPress;
     private static final String POST_COMMENT_URL = "http://www.EmbeddedCollege.org/psfwebservices/addcomment.php";
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
@@ -229,6 +230,16 @@ public class CardHolderInfo extends Activity {
 
         }
 
+    }
+    @Override
+    public void onBackPressed() {
+        long currentTime = System.currentTimeMillis();
+        if(currentTime - lastPress > 5000){
+            Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_LONG).show();
+            lastPress = currentTime;
+        }else{
+            super.onBackPressed();
+        }
     }
 
 }

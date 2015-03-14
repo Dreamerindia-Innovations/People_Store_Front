@@ -103,8 +103,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         Toast.makeText(getApplicationContext(), "Please Enable Internet connection", Toast.LENGTH_SHORT).show();
                     } else {
                         new AttemptLogin().execute();
-                        user.setText("");
-                        pass.setText("");
+
                     }
                 }
                 break;
@@ -118,7 +117,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
                 break;
         }
+//        user.setText("");
+//        pass.setText("");
     }
+
 
     public void hideSoftKeyboard(View v) {
         InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
@@ -180,7 +182,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     }
 
                     startActivity(i);
-//                    finish();
+                    finish();
                     return json.getString(TAG_MESSAGE);
                 } else {
                     Log.d("Login Failure!", json.getString(TAG_MESSAGE));

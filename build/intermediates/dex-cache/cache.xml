@@ -2,10 +2,28 @@
 <pre-dex-items>
 
     <item
+        dex="C:\Users\user\Dropbox\People_Store_Front\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-a06fd3d33f9b70e0daaecf6b84a5e1b5fd8d1612.jar"
+        jar="C:\Users\user\Dropbox\People_Store_Front\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03"/>
+    <item
+        dex="C:\Users\user\Dropbox\People_Store_Front\app\build\intermediates\pre-dexed\debug\classes-8fb79c04298552c2bb9703b482c66dfc4f2c8ed4.jar"
+        jar="C:\Users\user\Dropbox\People_Store_Front\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8"/>
+    <item
         dex="G:\software\Android\AndroidStudioProjects\2015\Feb\23022015\Rajendra Electronics\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-db5011bb446b70b4089a26e3aa3598a4e9812b9f.jar"
         jar="G:\software\android-studio\android-sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
         jumboMode="false"
         revision="21.1.1"
         sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="C:\Users\user\Dropbox\People_Store_Front\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-abd7b75e3dadfdbc06dc8debe1b24a6893396fbe.jar"
+        jar="G:\software\android-studio\android-sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35"/>
 
 </pre-dex-items>

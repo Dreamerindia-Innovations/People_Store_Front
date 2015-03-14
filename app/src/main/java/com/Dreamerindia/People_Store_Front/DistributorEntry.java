@@ -35,6 +35,7 @@ public class DistributorEntry extends Activity {
     TextView eMonth, eSugar, eWheat, eRice, eCardName, branchArea, ts, tw, tr, di;
     EditText cNumber, cSugar, cWheat, cRice, t, m;
     JSONArray user;
+    long lastPress;
     JSONObject hay;
     JSONParser jsonParser = new JSONParser();
     private static final String URL = "http://www.EmbeddedCollege.org/psfwebservices/dselect.php";
@@ -173,11 +174,16 @@ public class DistributorEntry extends Activity {
                 String wheat = jb.getString(TAG_WHEAT);
 
                 // displaying all data in textview
-                branchArea.append(" " + branch);
-                eMonth.append(month);
-                eSugar.append(sugar);
-                eWheat.append(wheat);
-                eRice.append(rice);
+                String t = branchArea.getText().toString();
+                if(t.length()>20){
+
+                }else{
+                    branchArea.append(" " + branch);
+                }
+                eMonth.setText(month);
+                eSugar.setText(sugar);
+                eWheat.setText(wheat);
+                eRice.setText(rice);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -227,10 +233,16 @@ public class DistributorEntry extends Activity {
                 String whe = jb.getString(TAG_WHEAT);
                 String ric = jb.getString(TAG_RICE);
                 String dis = jb.getString(TAG_DISTRI);
-                eCardName.append(" " + userN);
-                ts.append(sug);
-                tw.append(whe);
-                tr.append(ric);
+                String t = eCardName.getText().toString();
+                if(t.length()>8){
+
+                }else{
+                    eCardName.append(" " + userN);
+                }
+
+                ts.setText(sug);
+                tw.setText(whe);
+                tr.setText(ric);
                 di.setText(dis);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -315,16 +327,20 @@ public class DistributorEntry extends Activity {
             String dsug = eSugar.getText().toString();
             String dwhe = eWheat.getText().toString();
             String dric = eRice.getText().toString();
-            int cs = Integer.parseInt(sug);
-            int cw = Integer.parseInt(whe);
-            int cr = Integer.parseInt(ric);
-            int ds = Integer.parseInt(dsug);
-            int dw = Integer.parseInt(dwhe);
-            int dr = Integer.parseInt(dric);
-            int dsugar = ds - cs;
-            int dwheat = dw - cw;
-            int drice = dr - cr;
-
+            int dsugar=0,dwheat=0,drice=0;
+            try {
+                int cs = Integer.parseInt(sug);
+                int cw = Integer.parseInt(whe);
+                int cr = Integer.parseInt(ric);
+                int ds = Integer.parseInt(dsug);
+                int dw = Integer.parseInt(dwhe);
+                int dr = Integer.parseInt(dric);
+                dsugar = ds - cs;
+                dwheat = dw - cw;
+                drice = dr - cr;
+            }catch(NumberFormatException e){
+                e.printStackTrace();
+            }
 
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(DistributorEntry.this);
             String post_username = sp.getString(TAG_USERNAME, "anon");
@@ -365,7 +381,18 @@ public class DistributorEntry extends Activity {
                 cSugar.setText("");
                 cWheat.setText("");
                 cRice.setText("");
+
             }
+        }
+    }
+    @Override
+    public void onBackPressed() {
+        long currentTime = System.currentTimeMillis();
+        if(currentTime - lastPress > 5000){
+            Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_LONG).show();
+            lastPress = currentTime;
+        }else{
+            super.onBackPressed();
         }
     }
 }

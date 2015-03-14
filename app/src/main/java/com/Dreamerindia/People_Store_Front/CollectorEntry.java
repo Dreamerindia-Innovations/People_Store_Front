@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -23,6 +24,7 @@ import java.util.List;
 public class CollectorEntry extends Activity {
     EditText ceMonth, ceSugar, ceWheat, ceRice, ceCardID;
     JSONObject hay;
+    long lastPress;
     JSONParser jsonParser = new JSONParser();
     private static final String D_URL = "http://www.EmbeddedCollege.org/psfwebservices/dsupdate.php";
     private static final String TAG_PROFILE = "user";
@@ -127,6 +129,16 @@ public class CollectorEntry extends Activity {
                 ceRice.setText("");
                 ceCardID.setText("");
             }
+        }
+    }
+    @Override
+    public void onBackPressed() {
+        long currentTime = System.currentTimeMillis();
+        if(currentTime - lastPress > 5000){
+            Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_LONG).show();
+            lastPress = currentTime;
+        }else{
+            super.onBackPressed();
         }
     }
 }
